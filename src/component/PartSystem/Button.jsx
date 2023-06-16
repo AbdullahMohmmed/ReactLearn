@@ -5,13 +5,13 @@ function ButtonCount() {
     var countMin;
 
     if (count==0) {
-        countMin = <button type="button" class="btn btn-outline-danger disabled">-</button>
+        countMin = <button type="button" className="btn btn-outline-danger disabled">-</button>
 
         
     }
     else {
 
-        countMin=   <button onClick={() => setCount((count) => count - 1)} type="button" class="btn btn-outline-danger">-</button>
+        countMin=   <button onClick={() => setCount((count) => count - 1)} type="button" className="btn btn-outline-danger">-</button>
 
     }
 
@@ -23,10 +23,10 @@ function ButtonCount() {
 
         <>
 
-            <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <div className="btn-group" role="group" aria-label="Basic outlined example">
                 {countMin}
-                <button type="button" class="btn btn-outline-dark disabled">{count}</button>
-                <button onClick={() => setCount((count) => count + 1)} type="button" class="btn btn-outline-dark">+</button>
+                <button type="button" className="btn btn-outline-dark disabled">{count}</button>
+                <button onClick={() => setCount((count) => count + 1)} type="button" className="btn btn-outline-dark">+</button>
 
 
 

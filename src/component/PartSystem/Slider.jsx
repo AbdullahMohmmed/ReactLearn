@@ -4,18 +4,31 @@
 import { Swiper,useSwiper  ,SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination} from 'swiper';
 import 'swiper/css';
+
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 // import 'swiper/swiper-bundle.min.css;'
 import 'swiper/css/scrollbar';
-import { EffectCards } from 'swiper';
+import { EffectCards,EffectCoverflow } from 'swiper';
 import 'swiper/css/effect-cards';
+import { useEffect, useState } from 'react';
+
 
 
 
 
 function Slider(props) {
+
+    const [img,setImg]=useState([])
+
+    const slider = props.srcImg.map((item) => {
+        // console.log(item);
+        return (
+
+            <SwiperSlide ><img loading="lazy" src={item} /></SwiperSlide>
+
+        )})
 
     const swiper = useSwiper();
 
@@ -27,34 +40,30 @@ function Slider(props) {
       <h1 className="heading">Flower Gallery</h1>
 
 <Swiper
-    modules={[EffectCards, Pagination, Navigation]}
-
-    effect={'cards'}
-    grabCursor={true}
-    centeredSlides={true}
-    loop={true}
-    slidesPerView={'auto'}
-    coverflowEffect={{
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 0.5,
+  effect={'coverflow'}
+  grabCursor={true}
+  centeredSlides={true}
+  loop={true}
+  slidesPerView={'auto'}
+  coverflowEffect={{
+    rotate: 0,
+    stretch: 0,
+    depth: 80,
+    modifier: 2.5,
     }}
     pagination={{ el: '.swiper-pagination', clickable: true }}
-    navigation={{
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-      clickable: true,
-    }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true,
+    }} modules={[EffectCoverflow, Pagination, Navigation]}
+    className="swiper_container"
 
      
     >
-                <SwiperSlide><img src={props.images} style={{width:'100%', height:'100vh'}} /></SwiperSlide>
-
-        <SwiperSlide><img src="images/img2.jpg "style={{width:'100%', height:'100vh'}} /></SwiperSlide>
-        <SwiperSlide><img src="images/img3.jpg "style={{width:'100%', height:'100vh'}} /></SwiperSlide>
-        <SwiperSlide><img src="images/img4.jpg "style={{width:'100%', height:'100vh'}} /></SwiperSlide>
-        <SwiperSlide><img src="images/img1.jpg "style={{width:'100%', height:'100vh'}} /></SwiperSlide>
+        
+{slider}
+     
         <div className="slider-controler">
           <div className="swiper-button-prev slider-arrow">
             <ion-icon name="arrow-back-outline"></ion-icon>
@@ -64,7 +73,6 @@ function Slider(props) {
           </div>
           <div className="swiper-pagination"></div>
         </div>
-
     </Swiper>      
     </div>  </>
     );

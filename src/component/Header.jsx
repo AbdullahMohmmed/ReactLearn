@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
+import { Outlet, Link } from "react-router-dom";
+
 
 
 function Header(){
@@ -7,26 +9,27 @@ function Header(){
 return(
 
 
- <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+ <nav className="navbar navbar-expand-lg bg-light">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="#">Navbar</a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <Link to={ '/'}className="nav-item">
+          
+          <a className="nav-link active" aria-current="page" to>Home</a>
+        </Link>
+        <Link to={ 'contacts'} className="nav-item">
+          <a className="nav-link" href="contacts">contact</a>
+        </Link>
+        <Link to={ 'store'} className="nav-item">
+          <a className="nav-link" href="store">store</a>
+        </Link>
+        <Link  className="nav-item">
+          <a className="nav-link disabled">Disabled</a>
+        </Link>
       </ul>
     </div>
   </div>
