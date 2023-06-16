@@ -1,88 +1,33 @@
-import { Form } from "react-router-dom";
 
-export default function Contact() {
-  const contact = {
-    first: "Your",
-    last: "Name",
-    avatar: "https://placekitten.com/g/200/200",
-    twitter: "your_handle",
-    notes: "Some notes",
-    favorite: true,
-  };
+import Form from 'react-bootstrap/Form';
 
+function TextControlsExample() {
   return (
-    <div id="contact">
-      <div>
-        <img
-          key={contact.avatar}
-          src={contact.avatar || null}
-        />
-      </div>
+    <>
+    <div className="container">
+    <div className="row">
+<div className="card col-8">
 
-      <div>
-        <h1>
-          {contact.first || contact.last ? (
-            <>
-              {contact.first} {contact.last}
-            </>
-          ) : (
-            <i>No Name</i>
-          )}{" "}
-          <Favorite contact={contact} />
-        </h1>
+    <img className='contimg' src= 'images/contactUS.svg' alt="" />
+</div>
 
-        {contact.twitter && (
-          <p>
-            <a
-              target="_blank"
-              href={`https://twitter.com/${contact.twitter}`}
-            >
-              {contact.twitter}
-            </a>
-          </p>
-        )}
 
-        {contact.notes && <p>{contact.notes}</p>}
-
-        <div>
-          <Form action="edit">
-            <button type="submit">Edit</button>
-          </Form>
-          <Form
-            method="post"
-            action="destroy"
-            onSubmit={(event) => {
-              if (
-                !confirm(
-                  "Please confirm you want to delete this record."
-                )
-              ) {
-                event.preventDefault();
-              }
-            }}
-          >
-            <button type="submit">Delete</button>
-          </Form>
-        </div>
-      </div>
+    <div className="card col-4">
+    <Form>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <h1  >You can contact with us</h1>
+        <Form.Label>Email addres's</Form.Label>
+        <Form.Control type="email" placeholder="name@example.com" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Example textarea</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+    </Form>
+    </div></div>
     </div>
+ </>
   );
-}function Favorite({ contact }) {
-    // yes, this is a `let` for later
-    let favorite = contact.favorite;
-    return (
-      <Form method="post">
-        <button
-          name="favorite"
-          value={favorite ? "false" : "true"}
-          aria-label={
-            favorite
-              ? "Remove from favorites"
-              : "Add to favorites"
-          }
-        >
-          {favorite ? "★" : "☆"}
-        </button>
-      </Form>
-    );
-  }
+}
+
+export default TextControlsExample;

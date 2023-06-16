@@ -36,8 +36,7 @@ function Slider(props) {
 
 
         <>
-  <div className="container">
-      <h1 className="heading">Flower Gallery</h1>
+  <div className="containerv">
 
 <Swiper
   effect={'coverflow'}

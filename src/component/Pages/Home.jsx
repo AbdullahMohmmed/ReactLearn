@@ -1,14 +1,16 @@
+import Intro from "../PartSystem/Intro";
 import Slider from "../PartSystem/Slider";
 
 function Home(props){
 
-    const img = ['images/img5.jpg', 'images/img4.jpg','images/img7.jpg','images/img8.jpg'];
+    const img = ['images/caf1.jpg', 'images/caf2.jpg','images/caf3.jpg','images/caf4.jpg','images/caf5.jpg','images/caf6.jpg','images/cof1.jpg'];
     return(
     
-    
-    
+    <>
     <Slider srcImg={img}  />
-
+    
+    <Intro/>
+    </>
     
     )
     
