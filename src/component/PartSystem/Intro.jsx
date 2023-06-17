@@ -1,31 +1,42 @@
+import { useEffect } from "react"
+import Aos from 'aos';
+import 'aos/dist/aos.js';
+import 'aos/dist/aos.css';
 function Intro() {
-    return (  
+    
+    useEffect(() => {
 
-<div id="inrto"  className="container">
+        Aos.init();
 
-<div className="row">
-<div   className="col-4">
+    }, [])
+    return (
 
-<h1   >
-Enjoy!
+        <>
+        <div id="inrto" className="container   mb-5" data-aos="fade-up" >
 
-</h1>
-<h3>
+            <div className="row">
+            <div className="   col-sm-6 col-md-6	col-lg-7	col-xl-7	col-xxl-7">
 
-Indulge in a world of exceptional coffee at <span id="span">Café Matinal</span>, where convenience meets quality. Explore our curated collection of specialty beans, delivered straight to your doorstep, for a premium coffee experience at home.
-</h3>
-</div>
-<div className="col-8">
+                    <h1   >
+                        Enjoy!
 
-<img className='contimg' src= 'images/intro1.svg' alt="" />
+                    </h1>
+                    <h3>
 
-</div>
+                        Indulge in a world of exceptional coffee at <span id="span">Café Matinal</span>, where convenience meets quality. Explore our curated collection of specialty beans, delivered straight to your doorstep, for a premium coffee experience at home.
+                    </h3>
+                </div>
+                <div className="        col-sm-4 col-md-4	col-lg-5	col-xl-5	col-xxl-5">
 
-    </div>
-    </div>
+                    <img className='contimg' src='images/intro1.svg' alt="" />
 
+                </div>
+
+            </div>
+        </div>
+</>
     );
 }
 
 export default Intro;
- 
+

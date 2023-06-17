@@ -15,13 +15,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from "./routes/root";
-
+ 
 const AppLayout= ()=>{
   return(
     <>
     <Header/>
     <Outlet/>
-    </>
+     </>
   )
 }
 const router = createBrowserRouter([

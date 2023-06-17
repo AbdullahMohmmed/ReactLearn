@@ -1,3 +1,4 @@
+import Intro2 from "../PartSystem/GoStore";
 import Intro from "../PartSystem/Intro";
 import Slider from "../PartSystem/Slider";
 
@@ -10,7 +11,9 @@ function Home(props){
     <Slider srcImg={img}  />
     
     <Intro/>
-    </>
+        <Intro2/>
+ 
+     </>
     
     )
     
