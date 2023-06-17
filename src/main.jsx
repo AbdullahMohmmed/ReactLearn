@@ -30,7 +30,7 @@ const router = createBrowserRouter([
 
     children: [
       {
-        path: "/",
+        path: "ReactLearn/",
         element: <Home />,
       },
       {
