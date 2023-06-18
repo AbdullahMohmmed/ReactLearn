@@ -17,7 +17,7 @@ function Card(prpos) {
         <div
           key={item.id}
           data-aos="fade-up"
-          className="shadow card col-sm-4 col-md-5 col-lg-3 m-5 mt-5"
+          className="shadow card col-sm-3 col-md-3	col-lg-3 col-xl-3 col-xxl-3 m-5 mt-5"
         >
           <div>
             <img src={item.images} className="card-img-top" />
