@@ -1,25 +1,17 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
-import './index.css'
+import "./App.css";
+import "./index.css";
 
-
-import ButtonCount from "./component/PartSystem/Button"
-import Header from './component/Header';
-import Card from './component/PartSystem/Card';
-import Store from './component/Pages/Store';
-import Home from './component/Pages/Home';
-import Root from './routes/root';
+import Header from "./component/Header";
 
 function App() {
-
   return (
     <>
-     {/* <Header/> */}
-
+      <Header />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
