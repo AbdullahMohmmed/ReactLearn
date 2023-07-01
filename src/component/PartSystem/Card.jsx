@@ -10,7 +10,7 @@ function Card(prpos) {
       .then((data) => setProduct(data));
   }, []);
   useAos();
-
+console.log(Product);
   return (
     <div className="row ">
       {Product.map((item) => (
